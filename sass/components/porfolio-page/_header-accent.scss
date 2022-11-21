@@ -1,0 +1,7 @@
+.nav__link--portfolio {
+  color: $accent-color;
+  &::after {
+    content: '';
+    @extend %line;
+  }
+}

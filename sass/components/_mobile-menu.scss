@@ -1,0 +1,118 @@
+.button-menu {
+  display: block;
+  margin-left: auto;
+  padding: 0px;
+  border: none;
+  background-color: transparent;
+  &:focus,
+  &:hover {
+    fill: $accent-color;
+  }
+  @include media(768px) {
+    display: none;
+  }
+}
+.modile-menu {
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  transition: opacity $timing-function-cubic,
+    background-color $timing-function-cubic, scale $timing-function-cubic;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px 40px;
+  overflow: auto;
+
+  background-color: $primary-white-color;
+  width: 100vw;
+  height: 100vh;
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    scale: 0 1;
+  }
+}
+.container-flex {
+  margin-bottom: 32px;
+}
+.modile-menu__close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+
+  display: block;
+  padding: 0px;
+  background-color: transparent;
+  border: none;
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+  }
+}
+
+.menu-list__item {
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+.menu-list__link {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: calc(47px / 40px);
+  letter-spacing: 0.02em;
+  color: $title-text-color;
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+.menu-list__link--studio {
+  color: $accent-color;
+}
+.lict-contacts__item {
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+.lict-contacts__link {
+  font-weight: 500;
+  font-size: 34px;
+  line-height: calc(40px / 34px);
+  letter-spacing: 0.02em;
+  color: $accent-color;
+  @media screen and (max-width: 376px) {
+    font-size: 27px;
+  }
+}
+.lict-contacts__link--mail {
+  font-size: 24px;
+  line-height: calc(28px / 24px);
+  letter-spacing: 0.02em;
+  color: $primary-text-color;
+}
+.social-list {
+  margin-top: 64px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.social-list__item:not(:last-child) {
+  &::after {
+    content: '';
+    margin-left: 10px;
+    width: 22px;
+    height: 0px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    transform: rotate(90deg);
+  }
+}
+.social-list__link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: calc(22px / 18px);
+  letter-spacing: 0.02em;
+  color: $accent-color;
+}

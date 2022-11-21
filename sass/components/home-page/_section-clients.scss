@@ -1,0 +1,53 @@
+.section-clients__title {
+  @extend %work-team__title;
+  @media screen and (max-width: 1199px) {
+    margin-bottom: 30px;
+    font-size: 28px;
+    line-height: 1.18;
+  }
+  margin-bottom: 50px;
+}
+.clients-list {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.clients-list__item {
+  @include calc(2);
+  @include media(768px) {
+    @include calc(3);
+  }
+  @include media(1200px) {
+    @include calc(6);
+  }
+}
+.clients-list__link {
+  @include media(768px) {
+    min-width: 226px;
+  }
+  @include media(1200px) {
+    min-width: 170px;
+  }
+  transition: border-color $timing-function-cubic;
+
+  @extend %flex-center;
+  max-width: 210px;
+  height: 92px;
+  border-radius: 4px;
+  border: 1px solid $bkg-color-social-network;
+  &:hover,
+  &:focus {
+    border-color: $accent-color;
+  }
+}
+.clients-list__icon {
+  transition: fill $timing-function-cubic;
+
+  width: 106px;
+  height: 62px;
+  fill: $bkg-color-social-network;
+  .clients-list__link:hover &,
+  .clients-list__link:focus & {
+    fill: $accent-color;
+  }
+}

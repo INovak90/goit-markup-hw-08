@@ -1,0 +1,50 @@
+.filter-list {
+  display: flex;
+  gap: 8px;
+
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+    max-width: 320px;
+    margin-bottom: 40px;
+  }
+  @include media(768px) {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  @include media(1200px) {
+    margin-bottom: 50px;
+  }
+}
+.filter-list__item {
+  @media screen and (max-width: 767px) {
+    &:nth-last-child(-n + 2) {
+      margin-top: 15px;
+    }
+  }
+  @media screen and (max-width: 341px) {
+    &:nth-last-child(-n + 3) {
+      margin-top: 15px;
+    }
+  }
+}
+.filter-list__btn {
+  transition: box-shadow $timing-function-cubic, color $timing-function-cubic,
+    background-color $timing-function-cubic;
+
+  padding: 6px 22px;
+  border-radius: 4px;
+  border: 0px;
+  background-color: $team-bkg-color;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+  &:hover,
+  &:focus {
+    color: $primary-white-color;
+    background-color: $accent-color;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+}

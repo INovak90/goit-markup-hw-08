@@ -1,0 +1,68 @@
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.project-list__item {
+  @include media(768px) {
+    @include calc(2);
+  }
+  @include media(1200px) {
+    @include calc(3);
+  }
+  background-color: $primary-white-color;
+}
+.project-list__link {
+  transition: box-shadow $timing-function-cubic;
+
+  display: block;
+  &:hover,
+  &:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+}
+.project-list__thubm {
+  position: relative;
+  overflow: hidden;
+}
+.project-list__hidden-content {
+  position: absolute;
+  transform: translateY(100%);
+  transition: transform $timing-function-cubic;
+  pointer-events: none;
+
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+
+  padding: 63px 24px;
+  background: rgba(33, 150, 243, 0.9);
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+  color: $primary-white-color;
+  .project-list__link:hover &,
+  .project-list__link:focus & {
+    transform: translateY(0);
+  }
+}
+.project-box {
+  padding: 20px 24px;
+  border: 1px solid $border-color;
+  border-top: none;
+}
+.project-list__title {
+  margin-bottom: 4px;
+
+  color: $title-text-color;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+.project-list__text-filter {
+  color: $primary-text-color;
+  font-size: 16px;
+  line-height: 1.9;
+}
